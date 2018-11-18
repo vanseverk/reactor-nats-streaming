@@ -7,6 +7,9 @@ Usage:
 * Requires NATS Streaming server instance
 
 TODO's and challenges:
+* Option for Durable subscription
+* More manualAck receive options
+* Expand on Sender functionality
 * StreamingConnection
   * Set up a default connection automatically?
   * How to handle closing the connection?
@@ -14,4 +17,7 @@ TODO's and challenges:
   * hookBeforeEmitBiFunction
   * stopConsumingBiFunction
 * ExceptionHandlers for increased resilience
-* Absolutely no possibility to make sending manual acks non-blocking?
+* Sending manual acks should be non-blocking
+  * Blocker: Not possible in current java-nats-streaming 2.1.0
+    * Solution (Prefered): PR to https://github.com/nats-io/java-nats-streaming
+    * Solution: Extending Message to allow non-blocking manual ack
